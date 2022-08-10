@@ -16,7 +16,6 @@ export class RestaurantsResolver {
   async createRestaurant(
     @Args('input') createRestaurantDto: CreateRestaurantDto,
   ): Promise<boolean> {
-    console.log(createRestaurantDto);
     try {
       await this.restaurantService.createRestaurant(createRestaurantDto);
       return true;
@@ -34,7 +33,6 @@ export class RestaurantsResolver {
       await this.restaurantService.updateRestaurant(updateRestaurantDto);
       return true;
     } catch (e) {
-      console.log(e);
       return false;
     }
   }
